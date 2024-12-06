@@ -1,0 +1,11 @@
+{
+  "name": "AudioCommand",
+  "namespace": "com.pluralsight.avro",
+  "type": "record",
+  "fields": [
+    {
+      "name": "command",
+      "type": "string"
+    }
+  ]
+}
