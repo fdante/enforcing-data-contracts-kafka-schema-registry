@@ -1,0 +1,29 @@
+# Start the platform
+docker-compose up -d
+
+# Start Producer
+docker exec -it broker kafka-console-producer --broker-list broker:29092 --topic commands
+
+# Start Consumer
+docker exec -it broker kafka-console-consumer --bootstrap-server broker:29092 --topic commands
+
+# Run interactive shell inside the Broker container
+docker exec -it broker bash
+
+# Change to Log Directory
+cd /var/lib/kafka/data
+
+# Inspect binary file
+less 00000000000000000000.log
+
+# Start AVRO Producer
+docker exec -it schema-registry kafka-avro-console-producer --broker-list broker:29092 --topic commands-avro --property value.schema='{"type":"record","name":"AudioCommand","fields":[{"name":"command","type":"string"}]}'
+
+# Start AVRO Consumer
+docker exec -it schema-registry kafka-avro-console-consumer --bootstrap-server broker:29092 --topic commands-avro --from-beginning
+
+# JSON Message
+{ "command":"Hey Pluralsight, tell me something about Docker" }
+
+# Stop the platform
+docker-compose down
