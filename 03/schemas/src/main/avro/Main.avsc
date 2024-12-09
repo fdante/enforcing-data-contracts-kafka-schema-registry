@@ -1,0 +1,27 @@
+{
+  "name": "Main",
+  "namespace": "com.pluralsight.avro.weather",
+  "type": "record",
+  "fields": [
+    {
+      "name": "temp",
+      "type": "float"
+    },
+    {
+      "name": "pressure",
+      "type": "int"
+    },
+    {
+      "name": "humidity",
+      "type": "int"
+    },
+    {
+      "name": "tempMin",
+      "type": "float"
+    },
+    {
+      "name": "tempMax",
+      "type": "float"
+    }
+  ]
+}
