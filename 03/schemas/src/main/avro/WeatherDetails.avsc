@@ -1,0 +1,23 @@
+{
+  "name": "WeatherDetails",
+  "namespace": "com.pluralsight.avro.weather",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "main",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "icon",
+      "type": "string"
+    }
+  ]
+}
