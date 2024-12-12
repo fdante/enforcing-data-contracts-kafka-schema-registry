@@ -1,0 +1,11 @@
+{
+  "name": "City",
+  "namespace": "com.pluralsight.avro.weather",
+  "type": "record",
+  "fields": [
+    {
+      "name": "city",
+      "type": "string"
+    }
+  ]
+}
